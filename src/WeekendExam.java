@@ -34,30 +34,38 @@ public class WeekendExam {
                     System.out.print("Enter size of array: ");
                     do{
                         sizeOfArray = input.nextInt();
-                    }while (sizeOfArray > 0);
+                    }while (sizeOfArray <= 0);
                     array = new int[sizeOfArray];
                     for (int i = 0; i < array.length; i++) {
                         System.out.print("Enter element of array: ");
                         array[i] = input.nextInt();
                     }
-                    break;
-                case 5:
-                        if (sizeOfArray == 0) {
-                            System.out.println("Please use 4 in menu");
-                        } else {
-                            printArray(array);
+                    menuArray();
+                    System.out.print("Enter your choice: ");
+                    choice = input.nextInt();
+                        switch (choice) {
+                            case 1:
+                                printArray(array);
+                                break;
+                            case 2:
+                                System.out.println("Prime in array: ");
+                                for (int i = 0; i < array.length; i++) {
+                                    if(isPrime(array[i])){
+                                        System.out.printf(array[i]+"\t");
+                                    }
+                                }
+                                System.out.println();
+                                break;
+                            case 3:
+                                break;
+                            case 4:
+                                break;
+                            case 5:
+                                break;
+                            case 6:
                         }
                     break;
-                case 6:
-                    break;
-                case 7:
-                    break;
-                case 8:
-                    break;
-                case  9:
-                    break;
-                case 10:
-                    break;
+
             }
         }while(choice != 0);
     }
@@ -67,12 +75,17 @@ public class WeekendExam {
         System.out.println("2. Kiểm tra N có là số nguyên tố");
         System.out.println("3. Hiển thị danh sách N số nguyên tố đầu tiên");
         System.out.println("4. Nhập vào mảng gồm N phần tử");
-        System.out.println("5. Hiển thị danh sách mảng vừa nhập ở 4");
-        System.out.println("6. Liệt kê danh sách các số nguyên tố trong mảng vừa nhập");
-        System.out.println("7. Kiểm tra N có tồn tại trong mảng vừa nhập, nếu có trả về vị trí của N trong mảng");
-        System.out.println("8. Xóa N khỏi mảng vừa nhập");
-        System.out.println("9. Sắp xếp các phần tử của mảng vừa nhập ở 4 theo thứ tự tăng dần");
-        System.out.println("10. Nhập vào 1 số X, chèn X vào mảng sắp xếp ở bước 7 sao cho không làm thay đổi thứ tự sắp xếp của mảng");
+        System.out.println("0. Exit");
+    }
+
+    public static void menuArray() {
+        System.out.println("1. Hiển thị danh sách mảng vừa nhập ở 4");
+        System.out.println("2. Liệt kê danh sách các số nguyên tố trong mảng vừa nhập");
+        System.out.println("3. Kiểm tra N có tồn tại trong mảng vừa nhập, nếu có trả về vị trí của N trong mảng");
+        System.out.println("4. Xóa N khỏi mảng vừa nhập");
+        System.out.println("5. Sắp xếp các phần tử của mảng vừa nhập ở 4 theo thứ tự tăng dần");
+        System.out.println("6. Nhập vào 1 số X, chèn X vào mảng sắp xếp ở bước 7 sao cho không làm thay đổi thứ tự sắp xếp của mảng");
+        System.out.println("0. Exit");
     }
 
     public static void positiveIntegerOdd() {
@@ -104,7 +117,7 @@ public class WeekendExam {
     }
     public static void printArray(int...x){
         for(int a:x){
-            System.out.print(a+"\t");
+            System.out.printf(a+"\t");
         }
         System.out.println();
     }
