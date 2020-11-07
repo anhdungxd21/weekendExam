@@ -83,7 +83,6 @@ public class WeekendExam {
                                 }
                                 printArray(array);
                                 System.out.println();
-                                break;
                             case 5:
                                 System.out.println("Sort array");
                                 printArray(array);
@@ -91,6 +90,12 @@ public class WeekendExam {
                                 printArray(array);
                                 break;
                             case 6:
+                                System.out.println("Add value in array");
+                                System.out.print("Enter value: ");
+                                int value = input.nextInt();
+                                arrayPush(array,value);
+                                printArray(array);
+                                break;
                         }
                     break;
 
@@ -171,5 +176,14 @@ public class WeekendExam {
                 }
             }
         }
+    }
+
+    public static void arrayPush(int[] array, int value) {
+        int[] arrayNew = new int[array.length+1];
+        for (int i = 0; i < array.length; i++) {
+            arrayNew[i] = array[i];
+        }
+        arrayNew[array.length] = value;
+        array = arrayNew;
     }
 }
