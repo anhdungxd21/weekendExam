@@ -93,7 +93,8 @@ public class WeekendExam {
                                 System.out.println("Add value in array");
                                 System.out.print("Enter value: ");
                                 int value = input.nextInt();
-                                arrayPush(array,value);
+                                array = arrayPush(array,value);
+                                bubbleSort(array);
                                 printArray(array);
                                 break;
                         }
@@ -178,12 +179,12 @@ public class WeekendExam {
         }
     }
 
-    public static void arrayPush(int[] array, int value) {
+    public static int[] arrayPush(int[] array, int value) {
         int[] arrayNew = new int[array.length+1];
         for (int i = 0; i < array.length; i++) {
             arrayNew[i] = array[i];
         }
         arrayNew[array.length] = value;
-        array = arrayNew;
+        return arrayNew;
     }
 }
