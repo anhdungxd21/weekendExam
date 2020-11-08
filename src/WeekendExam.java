@@ -60,13 +60,17 @@ public class WeekendExam {
                                 System.out.printf("Enter value want to check: ");
                                 int checkValue = input.nextInt();
                                 int index = 0;
+                                boolean isIn = true;
                                 for (int i = 0; i < array.length; i++) {
                                     if(checkValue == array[i]){
                                         index = i;
                                         System.out.printf("%d is exist in array and index in %d",checkValue,index);
                                     }else {
-                                        System.out.printf("%d is not exist in array",checkValue);
+                                        isIn = false;
                                     }
+                                }
+                                if(!isIn){
+                                    System.out.printf("%d is not exist in array",checkValue);
                                 }
                                 System.out.println();
                                 break;
