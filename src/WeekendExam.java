@@ -140,7 +140,7 @@ public class WeekendExam {
     public static void printPrime(int length) {
         int count = 0;
         int number = 2;
-        while(count <= length){
+        while(count < length){
             if(isPrime(number)){
                 System.out.print(number+",");
                 count++;
